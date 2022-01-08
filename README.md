@@ -12,7 +12,7 @@ To look at an example of usage, look at [https://github.com/ndujaLabs/everdragon
 
 ## License
 
-MIT
+Apache2
 
 ## Copyright
 
