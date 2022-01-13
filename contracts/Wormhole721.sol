@@ -1,22 +1,23 @@
 // SPDX-License-Identifier: Apache2
 pragma solidity ^0.8.3;
 
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
 
 import "./interfaces/IWormhole.sol";
 import "./libraries/BytesLib.sol";
-import "./NFTStructs.sol";
-import "./NFTGetters.sol";
-import "./NFTSetters.sol";
-import "./IWormhole721.sol";
+import "./nftHelpers/NFTStructs.sol";
+import "./nftHelpers/NFTGetters.sol";
+import "./nftHelpers/NFTSetters.sol";
+import "./interfaces/IWormhole721.sol";
 
-// notice that this is not an ERC721
-// but it is supposed to be extended by an ERC721
-abstract contract Wormhole721 is Ownable, NFTGetters, NFTSetters, IWormhole721, ERC165 {
+contract Wormhole721 is ERC721, IWormhole721, NFTGetters, NFTSetters, Pausable, Ownable {
   using BytesLib for bytes;
 
-  function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {
+  constructor(string memory name, string memory symbol) ERC721(name, symbol) {}
+
+  function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721) returns (bool) {
     return interfaceId == type(IWormhole721).interfaceId || super.supportsInterface(interfaceId);
   }
 
@@ -115,19 +116,20 @@ abstract contract Wormhole721 is Ownable, NFTGetters, NFTSetters, IWormhole721, 
     return transfer;
   }
 
-  //
-  //
-  // the following MUST be implemented and overridden
-//
-//  function wormholeTransfer(
-//    uint256 tokenID,
-//    uint16 recipientChain,
-//    bytes32 recipient,
-//    uint32 nonce
-//  ) public payable override returns (uint64 sequence) {
-//    return 0;
-//  }
-//
-//  function wormholeCompleteTransfer(bytes memory encodedVm) public override {
-//  }
+  function wormholeTransfer(
+    uint256 tokenID,
+    uint16 recipientChain,
+    bytes32 recipient,
+    uint32 nonce
+  ) public payable override returns (uint64 sequence) {
+    require(_isApprovedOrOwner(_msgSender(), tokenID), "ERC721: transfer caller is not owner nor approved");
+    _burn(tokenID);
+    return _wormholeTransferWithValue(tokenID, recipientChain, recipient, nonce, msg.value);
+  }
+
+  // Complete a transfer from Wormhole
+  function wormholeCompleteTransfer(bytes memory encodedVm) public override {
+    (address to, uint256 tokenId) = _wormholeCompleteTransfer(encodedVm);
+    _safeMint(to, tokenId);
+  }
 }
