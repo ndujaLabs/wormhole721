@@ -53,15 +53,15 @@ contract Wormhole721 is ERC721, IWormhole721, NFTGetters, NFTSetters, Pausable, 
     return (transferRecipient, transfer.tokenId);
   }
 
-  function _wormholeTransfer(
-    uint256 tokenId,
-    uint16 recipientChain,
-    bytes32 recipient,
-    uint32 nonce
-  ) internal returns (uint64 sequence) {
-    // TODO msg.value - Wormhole fees
-    return _wormholeTransferWithValue(tokenId, recipientChain, recipient, nonce, msg.value);
-  }
+//  function _wormholeTransfer(
+//    uint256 tokenId,
+//    uint16 recipientChain,
+//    bytes32 recipient,
+//    uint32 nonce
+//  ) internal returns (uint64 sequence) {
+//    // TODO msg.value - Wormhole fees
+//    return _wormholeTransferWithValue(tokenId, recipientChain, recipient, nonce, msg.value);
+//  }
 
   function _wormholeTransferWithValue(
     uint256 tokenId,
