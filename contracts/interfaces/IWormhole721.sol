@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache2
-pragma solidity ^0.8.3;
+pragma solidity ^0.8.0;
 
 /// ERC165 interfaceId is 0x647bffff
 /* is IERC165 */
