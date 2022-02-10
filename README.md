@@ -1,6 +1,6 @@
 # Wormhole721
 An implementation of Wormhole native protocol for ERC721 NFTs
-[https://github.com/ndujaLabs/wormhole721](https://github.com/ndujaLabs/wormhole721)
+
 ## Usage
 
 Install with
@@ -16,4 +16,4 @@ Apache2
 
 ## Copyright
 
-(c) 2021 [Nduja Labs](https://ndujalabs.com)
+(c) 2021 [Nduja Labs](https://ndujalabs.com) - [https://github.com/ndujaLabs/wormhole721](https://github.com/ndujaLabs/wormhole721)
