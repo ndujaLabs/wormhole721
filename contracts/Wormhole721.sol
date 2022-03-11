@@ -129,6 +129,7 @@ contract Wormhole721 is ERC721, IWormhole721, NFTGetters, NFTSetters, Pausable, 
 
   // Complete a transfer from Wormhole
   function wormholeCompleteTransfer(bytes memory encodedVm) public override {
+    require(_msgSender() == wormhole(), "caller is not Wormhole");
     (address to, uint256 tokenId) = _wormholeCompleteTransfer(encodedVm);
     _safeMint(to, tokenId);
   }
