@@ -156,4 +156,7 @@ contract Wormhole721Upgradeable is
   //  function getIWormhole721InterfaceId() external pure returns(bytes4) {
   //    return type(IWormhole721).interfaceId;
   //  }
+
+  uint256[50] private __gap;
 }
+
