@@ -19,13 +19,15 @@
     "Francesco Sullo <francesco@sullo.co>"
   ],
   "license": "MIT",
+  "dependencies": {
+    "@ndujalabs/wormhole-tunnel": "^0.3.5",
+    "@openzeppelin/contracts": "^4.0.0",
+    "@openzeppelin/contracts-upgradeable": "^4.4.1"
+  },
   "devDependencies": {
-    "@ndujalabs/wormhole-tunnel": "^0.3.4",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^3.0.4",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
-    "@openzeppelin/contracts": "^4.0.0",
-    "@openzeppelin/contracts-upgradeable": "^4.4.1",
     "@openzeppelin/hardhat-upgrades": "^1.12.0",
     "@poanet/solidity-flattener": "^3.0.6",
     "chai": "^4.3.4",

@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@ndujalabs/wormhole-tunnel': ^0.3.4
+  '@ndujalabs/wormhole-tunnel': ^0.3.5
   '@nomiclabs/hardhat-ethers': ^2.0.2
   '@nomiclabs/hardhat-etherscan': ^3.0.4
   '@nomiclabs/hardhat-waffle': ^2.0.1
@@ -19,13 +19,15 @@ specifiers:
   solhint: ^3.3.6
   typescript: ^4.7.3
 
+dependencies:
+  '@ndujalabs/wormhole-tunnel': 0.3.5
+  '@openzeppelin/contracts': 4.6.0
+  '@openzeppelin/contracts-upgradeable': 4.6.0
+
 devDependencies:
-  '@ndujalabs/wormhole-tunnel': 0.3.4
   '@nomiclabs/hardhat-ethers': 2.0.6_ethers@5.6.8+hardhat@2.9.7
   '@nomiclabs/hardhat-etherscan': 3.0.4_hardhat@2.9.7
   '@nomiclabs/hardhat-waffle': 2.0.3_fd6sv4jqbx3xusj27gobjpw4xu
-  '@openzeppelin/contracts': 4.6.0
-  '@openzeppelin/contracts-upgradeable': 4.6.0
   '@openzeppelin/hardhat-upgrades': 1.18.1_uewrpi7bow3ofreh3p6lshsrlu
   '@poanet/solidity-flattener': 3.0.7_glob@7.2.3
   chai: 4.3.6
@@ -559,9 +561,12 @@ packages:
       tweetnacl-util: 0.15.1
     dev: true
 
-  /@ndujalabs/wormhole-tunnel/0.3.4:
-    resolution: {integrity: sha512-2QNAGXjF+PihSpCcCVpIUmTwoWNV2UinERObXbft/Qq6tl9MWFcnUs+s72nes2VUOxzsLkV+65RW/Vuy3sf/Dg==}
-    dev: true
+  /@ndujalabs/wormhole-tunnel/0.3.5:
+    resolution: {integrity: sha512-NrWGmSC0tNoD/VlpGXehXnXVQvc3AjKE4cAZiG1y8txqk5RrZ2FShxfnwIwzrXhFEEdO15/GjcyyVy1x6/WoKQ==}
+    dependencies:
+      '@openzeppelin/contracts': 4.6.0
+      '@openzeppelin/contracts-upgradeable': 4.6.0
+    dev: false
 
   /@nomiclabs/hardhat-ethers/2.0.6_ethers@5.6.8+hardhat@2.9.7:
     resolution: {integrity: sha512-q2Cjp20IB48rEn2NPjR1qxsIQBvFVYW9rFRCFq+bC4RUrn1Ljz3g4wM8uSlgIBZYBi2JMXxmOzFqHraczxq4Ng==}
@@ -608,11 +613,11 @@ packages:
 
   /@openzeppelin/contracts-upgradeable/4.6.0:
     resolution: {integrity: sha512-5OnVuO4HlkjSCJO165a4i2Pu1zQGzMs//o54LPrwUgxvEO2P3ax1QuaSI0cEHHTveA77guS0PnNugpR2JMsPfA==}
-    dev: true
+    dev: false
 
   /@openzeppelin/contracts/4.6.0:
     resolution: {integrity: sha512-8vi4d50NNya/bQqCmaVzvHNmwHvS0OBKb7HNtuNwEE3scXWrP31fKQoGxNMT+KbzmrNZzatE3QK5p2gFONI/hg==}
-    dev: true
+    dev: false
 
   /@openzeppelin/hardhat-upgrades/1.18.1_uewrpi7bow3ofreh3p6lshsrlu:
     resolution: {integrity: sha512-x0KzKmGWk4o5/o40MXKISS2P9ru5EePXedX0E4N4yuE/ZVdOvM8txaAdcdNniFoL4RY8Se6RdcWemZ3JTlRAEQ==}
