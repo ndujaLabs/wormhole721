@@ -1,6 +1,6 @@
 {
   "name": "@ndujalabs/wormhole721",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "An implementation of Wormhole native protocol for ERC721 NFTs",
   "publishConfig": {
     "access": "public"
@@ -9,7 +9,7 @@
     "/contracts/**/*.sol"
   ],
   "scripts": {
-    "test": "npx hardhat test",
+    "test": "echo 'No tests here, for now :('",
     "compile": "npx hardhat compile",
     "lint": "prettier --write 'contracts/**/*.sol' && solhint 'contracts/**/*.sol'"
   },
@@ -20,7 +20,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@ndujalabs/wormhole-tunnel": "^0.3.5",
+    "@ndujalabs/wormhole-tunnel": "^0.4.0",
     "@openzeppelin/contracts": "^4.0.0",
     "@openzeppelin/contracts-upgradeable": "^4.4.1"
   },
