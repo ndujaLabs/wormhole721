@@ -1,5 +1,5 @@
 # Wormhole721
-An implementation of Wormhole native protocol for ERC721 NFTs
+An implementation of Wormhole native protocol for ERC721 NFTs based on WormholeTunnel https://github.com/ndujaLabs/wormhole-tunnel
 
 ## Usage
 
