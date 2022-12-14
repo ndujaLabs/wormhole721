@@ -4,18 +4,20 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "@ndujalabs/wormhole-tunnel/contracts/WormholeTunnelUpgradeable.sol";
 
-contract Wormhole721Upgradeable is
-  ERC721Upgradeable,
-  WormholeTunnelUpgradeable
-{
-
+contract Wormhole721Upgradeable is ERC721Upgradeable, WormholeTunnelUpgradeable {
   // solhint-disable-next-line func-name-mixedcase
   function __Wormhole721_init(string memory name, string memory symbol) internal virtual initializer {
     __WormholeTunnel_init();
     __ERC721_init(name, symbol);
   }
 
-  function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721Upgradeable, WormholeTunnelUpgradeable) returns (bool) {
+  function supportsInterface(bytes4 interfaceId)
+    public
+    view
+    virtual
+    override(ERC721Upgradeable, WormholeTunnelUpgradeable)
+    returns (bool)
+  {
     return super.supportsInterface(interfaceId);
   }
 
@@ -38,4 +40,3 @@ contract Wormhole721Upgradeable is
 
   uint256[50] private __gap;
 }
-

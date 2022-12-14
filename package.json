@@ -1,6 +1,6 @@
 {
   "name": "@ndujalabs/wormhole721",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "An implementation of Wormhole native protocol for ERC721 NFTs",
   "publishConfig": {
     "access": "public"
@@ -20,7 +20,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@ndujalabs/wormhole-tunnel": "^0.4.0",
+    "@ndujalabs/wormhole-tunnel": "^0.4.1",
     "@openzeppelin/contracts": "^4.0.0",
     "@openzeppelin/contracts-upgradeable": "^4.4.1"
   },
