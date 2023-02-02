@@ -8,7 +8,15 @@ Install with
 npm install @ndujalabs/wormhole721
 ```
 
-To look at an example of usage, look at [https://github.com/ndujaLabs/everdragons2-core](https://github.com/ndujaLabs/everdragons2-core)
+To look at an example of usage, look at the folder `contracts/example`. 
+
+## Implementations
+
+Everdragons2 https://github.com/ndujaLabs/everdragons2-core
+
+Mobland In-game Assets https://github.com/superpowerlabs/in-game-assets
+
+
 
 ## License
 
