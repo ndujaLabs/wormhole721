@@ -15,6 +15,7 @@ contract MyBridgeableToken is
   ERC721EnumerableUpgradeable,
   Wormhole721Upgradeable
 {
+
   string private _baseTokenURI;
 
   function initialize(
@@ -43,10 +44,10 @@ contract MyBridgeableToken is
   }
 
   function supportsInterface(bytes4 interfaceId)
-    public
-    view
-    override(Wormhole721Upgradeable, ERC721Upgradeable, ERC721EnumerableUpgradeable)
-    returns (bool)
+  public
+  view
+  override(Wormhole721Upgradeable, ERC721Upgradeable, ERC721EnumerableUpgradeable)
+  returns (bool)
   {
     return super.supportsInterface(interfaceId);
   }
@@ -54,4 +55,5 @@ contract MyBridgeableToken is
   function _baseURI() internal view virtual override returns (string memory) {
     return _baseTokenURI;
   }
+
 }

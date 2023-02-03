@@ -1,6 +1,6 @@
 {
   "name": "@ndujalabs/wormhole721",
-  "version": "0.6.0",
+  "version": "0.5.4",
   "description": "An implementation of Wormhole native protocol for ERC721 NFTs",
   "publishConfig": {
     "access": "public"
