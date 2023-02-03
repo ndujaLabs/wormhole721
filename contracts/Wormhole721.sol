@@ -18,7 +18,7 @@ contract Wormhole721 is IWormhole721, ERC721, WormholeTunnel {
     uint16 recipientChain,
     bytes32 recipient,
     uint32 nonce
-  ) public payable virtual override (IWormhole721, IWormholeTunnel) returns (uint64 sequence) {
+  ) public payable virtual override(IWormhole721, IWormholeTunnel) returns (uint64 sequence) {
     require(_isApprovedOrOwner(_msgSender(), tokenID), "ERC721: transfer caller is not owner nor approved");
     _burn(tokenID);
     return _wormholeTransferWithValue(tokenID, recipientChain, recipient, nonce, msg.value);
